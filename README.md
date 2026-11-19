@@ -16,7 +16,6 @@ Which London boroughs and types of food business are most likely to have poor hy
 1. **Extracted and cleaned** 33 XML files with Python ([`scripts/01_extract_clean.py`](scripts/01_extract_clean.py)): parsed the XML, standardised postcodes, converted dates and scores, separated "awaiting inspection" and "exempt" businesses from rated ones, and created a low-rating flag and a years-since-inspection field.
 2. **Analysed in SQL** ([`sql/analysis_queries.sql`](sql/analysis_queries.sql), SQLite): seven queries using `GROUP BY`, `CASE`, `HAVING` and window functions (`RANK`, `SUM() OVER`). Results are in [`sql/query_results.txt`](sql/query_results.txt).
 3. **Explored and visualised in Python** ([notebook](notebooks/london_food_hygiene_analysis.ipynb)) with pandas and Matplotlib.
-4. **Built an interactive dashboard** in Power BI / Tableau (see [`dashboard/`](dashboard/)).
 
 ## Key findings
 | # | Finding |
@@ -42,7 +41,6 @@ Boroughs that combine a high low-rated share with a large backlog (Ealing, Camde
 | `sql/` | Analysis queries and their results |
 | `notebooks/` | Jupyter notebook with charts |
 | `images/` | Charts used in this README |
-| `dashboard/` | Power BI / Tableau dashboard file and screenshot |
 
 ## How to reproduce
 ```bash
@@ -53,6 +51,6 @@ python scripts/02_load_sqlite.py
 ```
 
 ## Tools
-Python (pandas, Matplotlib, ElementTree) · SQL (SQLite) · Power BI / Tableau · Jupyter
+Python (pandas, Matplotlib, ElementTree) · SQL (SQLite) · Jupyter
 
 *Data: Food Standards Agency, used under the Open Government Licence.*
